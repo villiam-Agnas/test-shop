@@ -11,6 +11,7 @@ export const ShopItem = ({name, description, url, price}:{name:string, descripti
       <div className="">
         <h4 className=""></h4>
       </div>
+      <button className="" onClick={} >Add to Satchel</button>
     </div>
   )
 }
