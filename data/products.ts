@@ -1,11 +1,4 @@
-type productType = {
-  name: string, 
-  description: string,
-  price: number,
-  image: string
-}
-
-export const products:productType[] = [
+export const products = [
   {
     name: "Lórien Leaf Elixir",
     description: "A soothing elven potion that restores a small amount of health and stamina.",
