@@ -7,8 +7,10 @@ export const ShopItem = ({title, description, url, price}:{title:string, descrip
       <div className="">
         <Image src={url} alt={title}/>
       </div>
-      <p>{description}</p>
-      <h4></h4>
+      <p className="">{description}</p>
+      <div className="">
+        <h4 className=""></h4>
+      </div>
     </div>
   )
 }
