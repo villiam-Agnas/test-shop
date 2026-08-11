@@ -17,8 +17,10 @@ export default function Home() {
 
   return (
     <div className="w-full bg-black">
-      <Header />
-        {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel}/>)}
+      <Header satchel={currentSatchel}/>
+        <div className="flex flex-wrap py-8">
+          {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel}/>)}
+        </div>
       <Footer/>
     </div>
   );
