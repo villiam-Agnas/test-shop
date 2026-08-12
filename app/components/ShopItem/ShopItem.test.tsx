@@ -64,4 +64,15 @@ describe("is shop item component rendering correctly", () => {
 
   })
 
+  test("there are only two images per product", () => {
+    const mockProduct = products[1]
+    render(<ShopItem product={mockProduct} updateSatchel={function (product: productType): void {
+      throw new Error("Function not implemented.");
+    } } />)
+
+    const images = screen.getAllByRole("img");
+
+    expect(images).toHaveLength(2);
+  })
+
 })
