@@ -6,6 +6,7 @@ import { products } from "@/data/products";
 import { ShopItem } from "./components/ShopItem";
 import { useState } from "react";
 import { productType } from "@/types/productTyps";
+import { AddToShop } from "./components/AddToShop";
 
 export default function Home() {
 
@@ -18,9 +19,10 @@ export default function Home() {
   return (
     <div className="w-full bg-black">
       <Header satchel={currentSatchel}/>
-        <div className="flex flex-wrap py-8">
-          {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel}/>)}
-        </div>
+      <div className="flex flex-wrap py-8">
+        {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel}/>)}
+      </div>
+      <AddToShop />
       <Footer/>
     </div>
   );
