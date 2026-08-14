@@ -1,4 +1,5 @@
-import {render, screen} from '@testing-library/react'
+import {fireEvent, render, screen, within} from '@testing-library/react'
+import Home from '@/app/page'
 import { Satchel } from '.'
 
 describe("test that checks the functionality of the satchel", ()=> {
@@ -43,5 +44,36 @@ describe("test that checks the functionality of the satchel", ()=> {
 
     const totalMockPrice = screen.queryByText(/Total:/)
     expect(totalMockPrice).not.toBeInTheDocument()
+  })
+
+  test('test that clicking a shopItem updates the satchel', ()=> {
+    render(<Home />)
+
+    const satchel = screen.queryByText(/Open Satchel/)
+    expect(satchel).not.toBeInTheDocument()
+
+    const shopItem= screen.getByText(/Lembas Bread/)
+    expect(shopItem).toBeInTheDocument()
+
+    const shopItemContainer = shopItem ? shopItem.parentElement : null
+    expect(shopItemContainer).toBeInTheDocument()
+
+    if(shopItemContainer) {
+
+      const addToSatchelButton = within(shopItemContainer).getByRole('button')
+
+      fireEvent.click(addToSatchelButton)
+
+      const openSatchel = screen.getByText(/Open Satchel/)
+      expect(openSatchel).toBeInTheDocument()
+
+      fireEvent.click(openSatchel)
+
+      const closeSatchel = screen.getByText(/Close Satchel/)
+      expect(closeSatchel).toBeInTheDocument()
+
+      const lembasBreadOccurence = screen.getAllByText(/Lembas Bread/)
+      expect(lembasBreadOccurence).toHaveLength(2)
+    }
   })
 })
