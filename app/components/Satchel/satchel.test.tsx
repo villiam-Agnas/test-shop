@@ -18,29 +18,33 @@ describe("test that checks the functionality of the satchel", ()=> {
     }
   ]
 
+  const removeFromSatchel = () => {
+    return 
+  }
+
   test('test that the first image is rendering', ()=> {
-    render(<Satchel currentSatchel={mockSatchel}/>)
+    render(<Satchel currentSatchel={mockSatchel} removeFromSatchel={removeFromSatchel}/>)
 
     const mockSatchelImage1 = screen.getByAltText('mockName')
     expect(mockSatchelImage1).toBeInTheDocument()
   })
 
   test('test that the second image is rendering', ()=> {
-    render(<Satchel currentSatchel={mockSatchel}/>)
+    render(<Satchel currentSatchel={mockSatchel} removeFromSatchel={removeFromSatchel}/>)
 
     const mockSatchelImage2 = screen.getByAltText('mockName2')
     expect(mockSatchelImage2).toBeInTheDocument()
   })
   
   test('test the total price number', ()=> {
-    render(<Satchel currentSatchel={mockSatchel}/>)
+    render(<Satchel currentSatchel={mockSatchel} removeFromSatchel={removeFromSatchel}/>)
 
     const totalMockPrice = screen.queryByText(/Total: 5/)
     expect(totalMockPrice).toBeInTheDocument()
   })
 
   test('test that if nothing is passed, the total does not render', ()=> {
-    render(<Satchel currentSatchel={[]}/>)
+    render(<Satchel currentSatchel={[]} removeFromSatchel={removeFromSatchel}/>)
 
     const totalMockPrice = screen.queryByText(/Total:/)
     expect(totalMockPrice).not.toBeInTheDocument()

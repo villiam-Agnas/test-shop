@@ -18,7 +18,6 @@ export const Header = ({satchel, removeFromSatchel}:{satchel:productType[], remo
       </div>}
     </div>
   )
-
 }
 
 export default Header
