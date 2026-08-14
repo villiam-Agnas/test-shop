@@ -2,7 +2,7 @@ import { productType } from "@/types/productTyps"
 import { Satchel } from "../Satchel"
 import { useState } from "react"
 
-export const Header = ({satchel}:{satchel:productType[]}) => {
+export const Header = ({satchel, removeFromSatchel}:{satchel:productType[], removeFromSatchel: (indexNumber: number)=> void}) => {
 
   const [satchelDisplay, setSatchelDisplay] = useState(false)
 
@@ -14,7 +14,7 @@ export const Header = ({satchel}:{satchel:productType[]}) => {
         <div className="text-2xl text-white cursor-pointer" onClick={()=> satchelDisplay ? setSatchelDisplay(false) : setSatchelDisplay(true)}>{satchelDisplay ? "Close Satchel" : "Open Satchel"}</div>
       </div>}
       {satchelDisplay && <div className="absolute top-full right-2">
-        <Satchel currentSatchel={satchel} />
+        <Satchel currentSatchel={satchel} removeFromSatchel={removeFromSatchel}/>
       </div>}
     </div>
   )

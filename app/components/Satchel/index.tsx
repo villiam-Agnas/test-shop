@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { productType } from "@/types/productTyps"
 
-export const Satchel = ({currentSatchel}:{currentSatchel:productType[]}) => {
+export const Satchel = ({currentSatchel, removeFromSatchel}:{currentSatchel:productType[], removeFromSatchel: (indexNumber: number)=> void}) => {
 
   let total = 0
   currentSatchel.forEach(e => total = total + e.price)
@@ -9,7 +9,8 @@ export const Satchel = ({currentSatchel}:{currentSatchel:productType[]}) => {
     <div className="flex flex-col bg-gray-800 border-t-2 border-white rounded-b-2xl">
       {currentSatchel.map((e:productType, i:number)=> {
         return (
-          <div key={i} className="flex text-white items-center py-3">
+          <div key={i} data-testid={`test${i}`} className="flex text-white items-center py-3">
+            <div className="text-2xl pl-3 cursor-pointer" onClick={()=>removeFromSatchel(i)}>X</div>
             <h3 className="text-2xl px-4">{e.name}</h3>
             <div className="px-3">
               <Image width={60} height={60} src={e.image} alt={e.name} />

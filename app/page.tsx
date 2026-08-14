@@ -16,11 +16,15 @@ export default function Home() {
     setCurrentSatchel([...currentSatchel, productObject])
   }
 
+  const removeFromSatchel = (indexNumber: number) => {
+    setCurrentSatchel(currentSatchel.filter((e, i)=> i !== indexNumber))
+  }
+
   return (
     <div className="w-full bg-black">
-      <Header satchel={currentSatchel}/>
+      <Header satchel={currentSatchel} removeFromSatchel={removeFromSatchel}/>
       <div className="flex flex-wrap py-8">
-        {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel}/>)}
+        {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel} />)}
       </div>
       <AddToShop />
       <Footer/>

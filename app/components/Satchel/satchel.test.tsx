@@ -76,4 +76,43 @@ describe("test that checks the functionality of the satchel", ()=> {
       expect(lembasBreadOccurence).toHaveLength(2)
     }
   })
+
+  test('test that the x button removes something from the satchel', ()=> {
+    render(<Home />)
+
+    const satchel = screen.queryByText(/Open Satchel/)
+    expect(satchel).not.toBeInTheDocument()
+
+    const shopItem= screen.getByText(/Lembas Bread/)
+    expect(shopItem).toBeInTheDocument()
+
+    const shopItemContainer = shopItem ? shopItem.parentElement : null
+    expect(shopItemContainer).toBeInTheDocument()
+
+    if(shopItemContainer) {
+
+      const addToSatchelButton = within(shopItemContainer).getByRole('button')
+
+      fireEvent.click(addToSatchelButton)
+
+      const openSatchel = screen.getByText(/Open Satchel/)
+      expect(openSatchel).toBeInTheDocument()
+
+      fireEvent.click(openSatchel)
+
+      const closeSatchel = screen.getByText(/Close Satchel/)
+      expect(closeSatchel).toBeInTheDocument()
+
+      const lembasBreadOccurence = screen.getByTestId('test0')
+      expect(lembasBreadOccurence).toBeInTheDocument()
+
+      const removeItem = within(lembasBreadOccurence).getByText(/X/)
+      expect(removeItem).toBeInTheDocument()
+
+      fireEvent.click(removeItem)
+
+      const lembasBreadGone = screen.queryByTestId('test0')
+      expect(lembasBreadGone).not.toBeInTheDocument()
+    }
+  })
 })
