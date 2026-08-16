@@ -1,10 +1,9 @@
 import { productType } from "@/types/productTyps"
 import { Satchel } from "../Satchel"
 import { useState } from "react"
-import { Checkout } from "../Checkout"
 import Link from "next/link"
 
-export const Header = ({satchel, removeFromSatchel, clearSatchel}:{satchel:productType[], removeFromSatchel: (indexNumber: number)=> void, clearSatchel:()=>void}) => {
+export const Header = ({satchel, removeFromSatchel}:{satchel:productType[], removeFromSatchel: (indexNumber: number)=> void}) => {
 
   const [satchelDisplay, setSatchelDisplay] = useState(false)
   const [checkoutDisplay, setCheckoutDisplay] = useState(false)
@@ -25,9 +24,8 @@ export const Header = ({satchel, removeFromSatchel, clearSatchel}:{satchel:produ
         <div className="text-2xl text-white cursor-pointer" onClick={()=> satchelDisplay ? setSatchelDisplay(false) : setSatchelDisplay(true)}>{satchelDisplay ? "Close Satchel" : "Open Satchel"}</div>
       </div>}
       {satchelDisplay && <div className="absolute top-full right-2">
-        <Satchel currentSatchel={satchel} removeFromSatchel={removeFromSatchel} checkout={checkout}/>
+        <Satchel currentSatchel={satchel} removeFromSatchel={removeFromSatchel}/>
       </div>}
-      {checkoutDisplay && <Checkout closeCheckout={closeCheckout} clearSatchel={clearSatchel}/>}
       <Link className="text-white absolute top-3 right-3 text-xl p-4" href={"/about"} >About Us</Link>
     </div>
   )

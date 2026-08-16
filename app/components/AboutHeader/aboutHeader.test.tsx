@@ -23,4 +23,11 @@ describe("test that checks the functionality of the about page header", ()=> {
     const sethLink = screen.getByRole("link", {name: /Seth/})
     expect(sethLink).toBeInTheDocument()
   })
+
+  test('test that the h1 is rendering', ()=> {
+    render(<AboutHeader />)
+
+    const sethLink = screen.getByRole("heading", { level: 1, "name": /About Us/i})
+    expect(sethLink).toBeInTheDocument()
+  })
 })

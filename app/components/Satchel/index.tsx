@@ -1,14 +1,7 @@
 import Image from "next/image"
 import { productType } from "@/types/productTyps"
-import { Checkout } from "../Checkout"
 
-export const Satchel = ({currentSatchel, removeFromSatchel, checkout}:{currentSatchel:productType[], removeFromSatchel: (indexNumber: number)=> void, checkout:()=> void}) => {
-  
-  const checkoutHandle = (e:React.MouseEvent) => {
-    e.stopPropagation()
-    checkout()
-  }
-
+export const Satchel = ({currentSatchel, removeFromSatchel}:{currentSatchel:productType[], removeFromSatchel: (indexNumber: number)=> void}) => {
   const handleRemoveSatchel = (index:number) => {
     removeFromSatchel(index)
   }
@@ -37,7 +30,6 @@ export const Satchel = ({currentSatchel, removeFromSatchel, checkout}:{currentSa
       {total > 0 && <div className="">
         <div className="h-0.5 bg-white"></div>
         <h4 className="py-3 text-3xl text-white">Total: {total}</h4>
-        <button className="mt-2 mb-4 border-white border-2 text-xl px-6 py-2 text-white rounded-xl cursor-pointer" onClick={(e)=> checkoutHandle(e)}>Checkout</button>
       </div>}
     </div>
   )
