@@ -1,0 +1,28 @@
+export const aboutData = [
+  {
+    page: 'seth',
+    text: `
+    Seth owns a 10-liter aquarium, which is, by any reasonable aquatic standard, roughly the size of a large soup pot. He refers to it, without irony, as "the ecosystem." The ecosystem currently contains three shrimp of questionable lineage, one fish who has clearly appointed himself the manager, and an ever-expanding colony of invasive snails that arrived, as these things do, uninvited and now unremovable. Seth has named several of them. He insists this is not attachment. It is population control through diplomacy.<br/>
+    He will tell you, at length and without being asked, that 10 liters is "actually plenty of water" — a claim made with the quiet defensiveness of a man who has done the math and does not like the math. Every few months he considers upgrading to a bigger tank, researches it deeply for eleven days, builds a spreadsheet, and then decides the current ecosystem has "character" and doesn't need more room. The snails, for their part, have never once been consulted on this decision, and have responded to being ignored by doubling in number.<br/>
+    Seth's other great unsolvable problem occurs whenever he enters a Lord of the Rings gift shop, a place where he can stand motionless for genuinely alarming stretches of time. He will pick up a Ringwraith figurine, set it down, pick up a mug shaped like the One Ring, set it down, hold a replica of Sting up to the light as though it might whisper the correct decision to him, and ultimately leave with nothing — or, on rare and chaotic occasions, with four small unrelated items and a look of profound spiritual exhaustion. He has been known to return to the same shop three separate times to "just look again," as though the correct souvenir might have quietly revealed itself in his absence.<br/>
+    `
+  },
+  {
+    page: 'villiam',
+    text: `
+    Villiam was born, as far as anyone can tell, sometime between a rainstorm and a jazz record skipping on a turntable in Södermalm, Stockholm — a fact that would explain both his perfect pitch and his tendency to speak in slightly ominous metaphors. He currently resides in a fourth-floor walk-up apartment that technically has room for one bookshelf but currently houses eleven, arranged not by author or genre but by what he calls "emotional weather."<br/>
+    Villiam can identify any note played on any instrument, in any key, by anyone, including his neighbor's poorly-tuned accordion, which he insists is "objectively suffering in F-sharp minor." He has never once used this power for anything practical. Instead, he uses it mostly to wince audibly at the tram doors, which chime a full quarter-tone flat, and to win arguments at parties by humming the correct pitch of someone's ringtone before they've even picked up the phone.<br/>
+    His two great literary loves exist in a permanent, unresolved tension. On one hand, there is The Lord of the Rings, which he has read enough times that he now dreams in Elvish subtitles and has strong, unsolicited opinions about the pacing of the Council of Elrond. On the other, there is Stephen King's The Shining, which he insists is "basically a very stressful bedtime story," and which has permanently ruined hedge mazes, hotel hallways, and the number 237 for him. Ask him which book he'd bring to a desert island and he will stare into the middle distance for an uncomfortably long time before changing the subject.<br/>
+    Villiam believes that Middle-earth and the Overlook Hotel exist on the same metaphysical plane — somewhere just behind Södermalm, past the ICA supermarket and down a staircase that definitely wasn't there yesterday. He has, on more than one occasion, tried to explain this theory to strangers at Kvarnen using only hand gestures and the wrong key of humming.<br/>
+    When he isn't reading, rereading, or reorganizing his shelves by emotional weather, Villiam can be found walking very slowly through Södermalm's cobblestone streets, silently correcting the pitch of passing car horns, utterly convinced that somewhere out there, a wizard and a very unfriendly hotel are both, in their own way, waiting for him to finish the last chapter.
+    `
+  },
+  {
+    page: 'about',
+    text: `
+    Somewhere between the Shire and your doorstep, there is a shop. <br/>
+    We started this little corner of Middle-earth for one simple reason: some stories don't stay on the page. They follow you around. They make you want a ring you can actually wear, a mug that survives a trip through Mordor, a candle that smells vaguely of pipeweed and second breakfast. That's us. We're the people who read the appendices for fun.<br/>
+    Every item here is chosen — sometimes after unreasonably long debate — by people who have strong opinions about the correct pronunciation of "Cirdan" and will absolutely notice if your map of Middle-earth has Bree in the wrong place. We're not just selling merchandise. We're building a small, well-curated waystation for fellow travelers: the kind of shop Bilbo would have browsed for an hour and left with three things he didn't need and absolutely no regrets.<br/>
+    Whether you're outfitting your own fellowship, hunting for a gift for the Tolkien-obsessed person in your life, or just here because you, too, believe a second breakfast is a legitimate meal, welcome. Take your time. Mind the Nazgûl. And if you find something that feels like it was pulled straight from the pages — good. That's exactly the point.<br/>`
+  }
+]

@@ -2,6 +2,7 @@ import { productType } from "@/types/productTyps"
 import { Satchel } from "../Satchel"
 import { useState } from "react"
 import { Checkout } from "../Checkout"
+import Link from "next/link"
 
 export const Header = ({satchel, removeFromSatchel, clearSatchel}:{satchel:productType[], removeFromSatchel: (indexNumber: number)=> void, clearSatchel:()=>void}) => {
 
@@ -27,6 +28,7 @@ export const Header = ({satchel, removeFromSatchel, clearSatchel}:{satchel:produ
         <Satchel currentSatchel={satchel} removeFromSatchel={removeFromSatchel} checkout={checkout}/>
       </div>}
       {checkoutDisplay && <Checkout closeCheckout={closeCheckout} clearSatchel={clearSatchel}/>}
+      <Link className="text-white absolute top-3 right-3 text-xl p-4" href={"/about"} >About Us</Link>
     </div>
   )
 }
