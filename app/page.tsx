@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div className="w-full bg-black">
-      <Header satchel={currentSatchel} removeFromSatchel={removeFromSatchel} clearSatchel={clearSatchel}/>
+      <Header satchel={currentSatchel} removeFromSatchel={removeFromSatchel} />
       <div className="flex flex-wrap py-8">
         {products.map((e:productType, i) => <ShopItem key={i} product={e} updateSatchel={addToSatchel} />)}
       </div>
